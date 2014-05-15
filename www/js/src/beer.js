@@ -63,7 +63,7 @@ var beer = {
         };
 
         $.ajax({
-            'url'     : 'service/get_checkins.phpa',
+            'url'     : 'service/get_checkins.php',
             'dataType': 'json',
             'success' : function (data) {
                 if (data && data.response && data.response.checkins) {
