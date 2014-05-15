@@ -186,7 +186,7 @@ module.exports = function (grunt) {
                 files  : ['www/css/src/*.less', 'www/css/vendor/*.css', 'www/css/vendor/*.less'],
                 tasks  : ['less'],
                 options: {
-                    livereload: true
+                    livereload: 31337
                 }
             },
             copy     : {
@@ -204,27 +204,27 @@ module.exports = function (grunt) {
                 files  : ['<%= concat.beer.src %>'],
                 tasks  : ['jshint', 'concat:beer', 'uglify:beer'],
                 options: {
-                    livereload: true
+                    livereload: 31337
                 }
             },
             vendor_js: {
                 files  : ['<%= concat.vendor.src %>'],
                 tasks  : ['concat:vendor', 'uglify:vendor'],
                 options: {
-                    livereload: true
+                    livereload: 31337
                 }
             },
             imagemin : {
                 files  : ['www/img/src/**/*'],
                 tasks  : ['imagemin'],
                 options: {
-                    livereload: true
+                    livereload: 31337
                 }
             },
             grunt    : {
                 files  : ['Gruntfile.js'],
                 options: {
-                    livereload: false
+                    livereload: 31337
                 }
             }
 

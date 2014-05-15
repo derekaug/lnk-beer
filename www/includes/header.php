@@ -15,3 +15,6 @@ $updated_at = date('c', $cache->created('get_checkins'));
         <span id="update-time"><?php echo $updated_at; ?></span>
     </span>
 </header>
+<div id="loading">
+    <img src="/img/loading.gif" alt="Loading..." />
+</div>

@@ -11,6 +11,7 @@ var beer = {
         // get elements from page
         self.$beer_map = $('#beer-map');
         self.$updated_time = $('#update-time');
+        self.$loading = $('#loading');
         self.template_checkin = $('#template-checkin').html();
 
         self.$updated_time.text(moment.utc(self.$updated_time.text()).local().format('LLL'));
@@ -65,6 +66,7 @@ var beer = {
             'url'     : 'service/get_checkins.php',
             'dataType': 'json',
             'success' : function (data) {
+                self.$loading.fadeOut();
                 if (data && data.response && data.response.checkins) {
                     self.bounds = new google.maps.LatLngBounds();
                     var items = data.response.checkins.items;

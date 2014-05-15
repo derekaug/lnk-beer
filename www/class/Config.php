@@ -12,6 +12,7 @@ class Config
     public static $contact_to;
     public static $contact_from;
     public static $host;
+    public static $port;
     public static $canonical_host;
     public static $environment;
     public static $asset_type;
@@ -35,12 +36,13 @@ class Config
 
             // get host first
             static::$host = $_SERVER['SERVER_NAME'];
+            static::$port = $_SERVER['SERVER_PORT'];
 
             // set environment and asset time
             static::$canonical_host = 'lnk-beer.derekjauugstine.com';
             switch (static::$host) {
-                case 'lnk-beer.derekjauugstine.com':
-                case 'www.lnk-beer.derekjauugstine.com':
+                case 'lnk-beer.derekjaugustine.com':
+                case 'www.lnk-beer.derekjaugustine.com':
                     static::$environment = 'production';
                     static::$asset_type = 'min';
                     break;
@@ -64,7 +66,8 @@ class Config
             static::$CENTER_LNG = -96.6753;
 
             static::$root = __DIR__ . '/../';
-            static::$base_url = 'http://' . static::$host . '/';
+
+            static::$base_url = 'http://' . static::$host . (static::$port !== 80 ? ':' . static::$port : '') . '/';
             Session::init();
         }
     }
