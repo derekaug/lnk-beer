@@ -54,4 +54,18 @@ class Cache
         }
         return $rvalue;
     }
+
+    /**
+     * retrieves timestamp for when cache item was created
+     * @param string $key key to get created time for
+     * @return int|null unix timestamp or null
+     */
+    public function created($key){
+        $rvalue = null;
+        $file = $this->directory . '/' . static::CACHE_PREFIX . $key;
+        if(file_exists($file)){
+            $rvalue = filemtime($file);
+        }
+        return $rvalue;
+    }
 } 
