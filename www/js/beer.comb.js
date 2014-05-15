@@ -63,10 +63,9 @@ var beer = {
         };
 
         $.ajax({
-            'url'     : 'service/get_checkins.php',
+            'url'     : 'service/get_checkins.phpa',
             'dataType': 'json',
             'success' : function (data) {
-                self.$loading.fadeOut();
                 if (data && data.response && data.response.checkins) {
                     self.bounds = new google.maps.LatLngBounds();
                     var items = data.response.checkins.items;
@@ -103,6 +102,12 @@ var beer = {
                     // fits map to bounds set by all markers
                     self.map.fitBounds(self.bounds);
                 }
+            },
+            'error' : function() {
+                window.alert('There was a problem getting recent beer check-ins, please reload the page and to try again.');
+            },
+            'complete': function() {
+                self.$loading.fadeOut();
             }
         });
     }
