@@ -39,7 +39,7 @@ class Config
             static::$port = $_SERVER['SERVER_PORT'];
 
             // set environment and asset time
-            static::$canonical_host = 'lnk-beer.derekjauugstine.com';
+            static::$canonical_host = 'lnk-beer.derekjaugustine.com';
             switch (static::$host) {
                 case 'lnk-beer.derekjaugustine.com':
                 case 'www.lnk-beer.derekjaugustine.com':
