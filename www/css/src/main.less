@@ -1,0 +1,80 @@
+@import (inline) "../vendor/normalize.css";
+
+html {
+  height: 100%
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0
+}
+
+#beer-map {
+  height: 100%
+}
+
+.checkin-info {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+
+  .beer-label {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    width: 75px;
+    height: 75px;
+  }
+
+  .beer-rating {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 85px;
+    width: 115px;
+    height: 75px;
+    font-size: 1.5em;
+    line-height: 75px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .score {
+    font-size: 2.5em;
+  }
+
+  .more-info {
+    position: absolute;
+    top: 90px;
+    left: 0px;
+    width: 200px;
+  }
+
+  .beer-name {
+    font-size: 1.25em;
+    margin: 0;
+  }
+
+  .beer-style {
+    font-size: 0.95em;
+    font-style: italic;
+  }
+
+  .user-info {
+    display: block;
+    margin-top: 8px;
+  }
+
+  .user-name {
+    display: block;
+  }
+
+  .time {
+    display: block;
+    font-size: 0.8em;
+    font-style: italic;
+  }
+}

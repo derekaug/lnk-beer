@@ -1,0 +1,13 @@
+{
+    "require" : {
+    },
+    "config"  : {
+        "vendor-dir": "www/vendor_class/",
+        "bin-dir"   : "www/vendor_class/bin"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "www/class/"
+        }
+    }
+}

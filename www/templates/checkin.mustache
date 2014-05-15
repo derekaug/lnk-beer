@@ -1,0 +1,17 @@
+<div class="checkin-info">
+    <img class="beer-label" src="{{beer.beer_label}}" alt="{{beer.beer_name}}"/>
+    <span class="beer-rating">
+        {{#rating_score}}<span class="score">{{rating_score}}</span> / 5{{/rating_score}}
+        {{^rating_score}}<span class="score">N/A</span>{{/rating_score}}
+    </span>
+    <span class="more-info">
+        <span class="beer-info">
+            <h4 class="beer-name">{{beer.beer_name}}</h4>
+            <span class="beer-style">{{beer.beer_style}}</span>
+        </span>
+        <span class="user-info">
+            <span class="user-name">{{user.first_name}} {{user.last_name}}</span>
+            <span class="time" title="{{created_at}}">{{created_at}}</span>
+        </span>
+    </span>
+</div>
