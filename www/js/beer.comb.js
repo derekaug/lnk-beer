@@ -10,7 +10,10 @@ var beer = {
 
         // get elements from page
         self.$beer_map = $('#beer-map');
+        self.$updated_time = $('#update-time');
         self.template_checkin = $('#template-checkin').html();
+
+        self.$updated_time.text(moment.utc(self.$updated_time.text()).local().format('LLL'));
 
         self.initMap();
         self.fillMap();
@@ -43,6 +46,9 @@ var beer = {
         });
     },
 
+    /**
+     * fill map with latest check-ins
+     */
     'fillMap': function () {
         var self = this;
 
@@ -74,12 +80,15 @@ var beer = {
                             }),
                             $info = $(Mustache.render(self.template_checkin, checkin)),
                             $time = $info.find('.time');
-                        $time.text(moment.utc($time.text()).local().fromNow());
+
+                        // handle time conversion to local time from UTC
+                        $time.text(moment.utc($time.text(), 'ddd, DD MMM YYYY HH:mm:ss ZZ').local().fromNow());
                         var info = new google.maps.InfoWindow({
                                 position: latlng,
                                 content: $info.get(0).outerHTML
                             });
 
+                        // handles clicking on markers for mor info
                         var markerClick = function(i, m){
                             i.open(self.map, m);
                         };
@@ -89,14 +98,11 @@ var beer = {
                         self.bounds.extend(latlng);
                     });
 
+                    // fits map to bounds set by all markers
                     self.map.fitBounds(self.bounds);
                 }
             }
         });
-    },
-
-    'getLocation': function () {
-        var self = this;
     }
 };
 

@@ -1,16 +1,53 @@
 @import (inline) "../vendor/normalize.css";
+@import "mixins";
 
 html {
   height: 100%
 }
 
 body {
+  position: relative;
   height: 100%;
   margin: 0;
   padding: 0
 }
 
+header {
+  position: absolute;
+  z-index: 2;
+  bottom: 30px;
+  right: 0px;
+  width: 220px;
+  padding: 0.5em 0.75em;
+  background-color: #FFFFFF;
+  .rounded(2px 0 0 2px);
+  .box-shadow(rgb(0, 0, 0) 0px 1px 4px -1px);
+  .box-shadow(rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px);
+
+  h1 {
+    margin: 0;
+    font-size: 1.4em;
+    line-height: 1.5em;
+  }
+
+  p {
+    font-size: 0.8em;
+    margin: 0.25em 0;
+  }
+
+  .last-update {
+    font-weight: 700;
+    font-size: 0.7em;
+  }
+
+  #update-time {
+    font-weight: 400;
+  }
+}
+
 #beer-map {
+  position: relative;
+  z-index: 1;
   height: 100%
 }
 

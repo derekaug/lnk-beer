@@ -1,6 +1,7 @@
 <?php
 include_once(__DIR__ . '/../vendor_class/autoload.php');
 Config::init();
+// get checkins either from cache or API
 $key = 'get_checkins';
 $checkins = null;
 $cache = new Cache(__DIR__ . '/../cache');
